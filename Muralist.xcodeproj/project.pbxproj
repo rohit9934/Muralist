@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2AD07B2B2D96E900BB4850 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AD07A2B2D96E900BB4850 /* PhotoView.swift */; };
 		8C7A12B12B2D8BFC00F35EE2 /* MuralistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A12B02B2D8BFC00F35EE2 /* MuralistApp.swift */; };
 		8C7A12B32B2D8BFC00F35EE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A12B22B2D8BFC00F35EE2 /* ContentView.swift */; };
 		8C7A12B52B2D8BFC00F35EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7A12B42B2D8BFC00F35EE2 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C2AD07A2B2D96E900BB4850 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		8C7A12AD2B2D8BFC00F35EE2 /* Muralist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muralist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7A12B02B2D8BFC00F35EE2 /* MuralistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuralistApp.swift; sourceTree = "<group>"; };
 		8C7A12B22B2D8BFC00F35EE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				8C7A12B22B2D8BFC00F35EE2 /* ContentView.swift */,
 				8C7A12B42B2D8BFC00F35EE2 /* Assets.xcassets */,
 				8C7A12B62B2D8BFC00F35EE2 /* Preview Content */,
+				8C2AD07A2B2D96E900BB4850 /* PhotoView.swift */,
 			);
 			path = Muralist;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2AD07B2B2D96E900BB4850 /* PhotoView.swift in Sources */,
 				8C7A12B32B2D8BFC00F35EE2 /* ContentView.swift in Sources */,
 				8C7A12B12B2D8BFC00F35EE2 /* MuralistApp.swift in Sources */,
 			);
