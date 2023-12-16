@@ -16,9 +16,9 @@ struct ContentView: View {
                 ScrollView {
                     LazyVGrid(columns: gridItems,spacing: 10) {
                         ForEach(1..<12,id: \.self) { num in
-                            NavigationLink(destination: ImageEditorView(imageToEdit: String(num))) {
-                                                            PhotoView(imageID: String(num))
-                                                        }
+                            NavigationLink(destination: ImageGalleryView(selectedImageIndex: num)) {
+                                PhotoView(imageID: String(num))
+                            }
                         }
                     }.padding()
                 }
