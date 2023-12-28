@@ -41,6 +41,7 @@ struct ImageGalleryView: View {
                         }
                 }
             }
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .sheet(isPresented: $showEditor, content: {
                 ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView)
                     .onChange(of: downloadView, perform: {  newValue in
@@ -69,7 +70,7 @@ struct ImageGalleryView: View {
                 }
                 
             }
-        }
+        }.ignoresSafeArea()
         .navigationBarHidden(true) // Optionally hide the navigation bar if present
     }
 }

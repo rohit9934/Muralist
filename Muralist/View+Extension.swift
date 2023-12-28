@@ -15,7 +15,10 @@ extension View {
             let controller = UIHostingController(rootView: self)
             
             // Define the frame and layout of the controller's view
-            controller.view.frame = CGRect(origin: .zero, size: CGSize(width: 300, height: 600))
+            let screenSize = UIScreen.main.bounds.size
+            
+            // Set the frame of the controller's view to match the screen size
+            controller.view.frame = CGRect(origin: .zero, size: screenSize)
             controller.view.layoutIfNeeded()
             
             // Render the view hierarchy as an image
