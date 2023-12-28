@@ -14,13 +14,13 @@
             filePath = "Muralist/ImageEditorView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "36B7D0CF-3735-429A-936A-891E1E568106 - 2a51637120cf6aff"
+                  uuid = "36B7D0CF-3735-429A-936A-891E1E568106 - 2a51637120cf6aa1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/ImageEditorView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "552">
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "220">
                </Location>
                <Location
-                  uuid = "36B7D0CF-3735-429A-936A-891E1E568106 - 2a51637120cf6aff"
+                  uuid = "36B7D0CF-3735-429A-936A-891E1E568106 - 2a51637120cf6a80"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,9 +45,9 @@
                   urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/ImageEditorView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "76">
                </Location>
             </Locations>
          </BreakpointContent>
