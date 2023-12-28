@@ -24,6 +24,7 @@ struct ImageGalleryView: View {
     @State var sliderValue: Double = 100
     @State var verticalChange: Double = 0
     @State var horizontalChange: Double = 0
+    @State var downloadView: Bool = false
     var body: some View {
         ZStack {
             Color.red.overlay(GrainyEffectView(opacity: 0.6, size: 1))
@@ -41,8 +42,21 @@ struct ImageGalleryView: View {
                 }
             }
             .sheet(isPresented: $showEditor, content: {
-                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange)
-                    .presentationDetents([.height(100)])
+                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView)
+                    .onChange(of: downloadView, perform: {  newValue in
+                        if newValue {
+                            PHPhotoLibrary.requestAuthorization { status in
+                                if status == .authorized {
+                                    let image = self.asImage()
+                                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                                } else {
+                                    // Handle the case where the user denies access
+                                }
+                            }
+                            downloadView = false
+                        }
+                    })
+                    .presentationDetents([.height(120)])
             })
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enables paging behavior
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -50,21 +64,13 @@ struct ImageGalleryView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     // Perform your action here
-                    PHPhotoLibrary.requestAuthorization { status in
-                        if status == .authorized {
-                            let image = self.asImage()
-                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                        } else {
-                            // Handle the case where the user denies access
-                        }
-                    }
                 }) {
                     Image(systemName: "plus") // Customize with your button's image or text
                 }
                 
             }
         }
-        //.navigationBarHidden(true) // Optionally hide the navigation bar if present
+        .navigationBarHidden(true) // Optionally hide the navigation bar if present
     }
 }
 struct ColorView: View {

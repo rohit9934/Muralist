@@ -11,6 +11,7 @@ struct ImageEditIconsView: View {
     @Binding var sliderValue: Double
     @Binding var verticalChange: Double
     @Binding var horizontalChange: Double
+    @Binding var downloadImage: Bool
     @State private var showSlider: Bool = false
     @State private var scale: CGFloat = 1.0
     var body: some View {
@@ -43,11 +44,16 @@ struct ImageEditIconsView: View {
                 .onChange(of: horizontalChange) { newValue in
                      print(horizontalChange)
             }
+            Button(action: {
+                downloadImage = true
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
         }
     }
 }
 
 #Preview {
-    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50))
+    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false))
         .previewLayout(.fixed(width: 60, height: 100))
 }
