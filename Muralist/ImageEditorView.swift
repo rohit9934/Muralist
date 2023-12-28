@@ -21,7 +21,9 @@ struct ImageEditorView: View {
 struct ImageGalleryView: View {
     @State var selectedImageIndex: Int // The index of the tapped image
     @State var showEditor: Bool = false
-    @State var sliderValue: Double = 50
+    @State var sliderValue: Double = 100
+    @State var verticalChange: Double = 0
+    @State var horizontalChange: Double = 0
     var body: some View {
         ZStack {
             Color.red.overlay(GrainyEffectView(opacity: 0.6, size: 1))
@@ -31,13 +33,15 @@ struct ImageGalleryView: View {
                     ImageEditorView(imageToEdit: String(index))
                         .tag(index)
                         .scaleEffect(sliderValue * 0.01)// Tag each page with its index
+                        .offset(y: verticalChange)
+                        .offset(x: horizontalChange)
                         .onTapGesture {
                             showEditor.toggle()
                         }
                 }
             }
             .sheet(isPresented: $showEditor, content: {
-                ImageEditIconsView(sliderValue: $sliderValue)
+                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange)
                     .presentationDetents([.height(100)])
             })
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enables paging behavior
