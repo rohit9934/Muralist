@@ -34,7 +34,11 @@ struct ContentView: View {
                     }.padding()
                 }
             }.navigationTitle("Muralist")
-                .tint(.red)
+                .toolbarColorScheme(.dark, for: .navigationBar)
+                .toolbarBackground(
+                                              Color.black,
+                                              for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
                 .toolbar(content: {
                     PhotosPicker(selection: $photosData.photosPickerItem, matching: .images) {
                         Image(systemName: "plus")
