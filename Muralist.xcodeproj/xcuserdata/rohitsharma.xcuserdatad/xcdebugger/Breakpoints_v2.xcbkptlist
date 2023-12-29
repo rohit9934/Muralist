@@ -3,4 +3,69 @@
    uuid = "42134A6F-0C19-45A6-910A-E9370DB2C57E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muralist/PhotosDataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "addPhoto(photoPicker:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - 6d1adf0ea02c50b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
+                  moduleName = "Muralist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - 4e1fd7ce56b8f2b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
+                  moduleName = "Muralist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - d6405c8a5fb01f4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
+                  moduleName = "Muralist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
