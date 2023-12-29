@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct PhotoView: View {
-    var imageID: String
+    var showImage: UIImage
     var body: some View {
-        Image(imageID)
+        Image(uiImage: showImage)
             .resizable()
             .scaledToFill()
             .frame(width: 175,height: 175)
@@ -20,6 +20,6 @@ struct PhotoView: View {
 }
 
 #Preview {
-    PhotoView(imageID: "12")
+    PhotoView(showImage: UIImage(named: "1")!)
         .previewLayout(.fixed(width: 175, height: 175))
 }

@@ -10,15 +10,16 @@ import PhotosUI
 struct ContentView: View {
     let gridItems = [GridItem(.flexible()),  GridItem(.flexible())]
     @State private var addedImage: PhotosPickerItem? = nil
+    var photosData = PhotosDataModel()
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.black.ignoresSafeArea()
                 ScrollView {
                     LazyVGrid(columns: gridItems,spacing: 10) {
-                        ForEach(1..<13,id: \.self) { num in
-                            NavigationLink(destination: ImageGalleryView(selectedImageIndex: num)) {
-                                PhotoView(imageID: String(num))
+                        ForEach(photosData.photos,id: \.self) { num in
+                            NavigationLink(destination: ImageGalleryView(selectedImage: num)) {
+                                PhotoView(showImage: num.image)
                             }
                         }
                     }.padding()

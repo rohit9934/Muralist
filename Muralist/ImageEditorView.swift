@@ -8,10 +8,10 @@
 import SwiftUI
 import Photos
 struct ImageEditorView: View {
-    var imageToEdit: String
+    var imageToEdit: UIImage
     var body: some View {
         ZStack {
-            Image(imageToEdit)
+            Image(uiImage: imageToEdit)
                 .resizable()
             .scaledToFit()
         }
@@ -19,7 +19,7 @@ struct ImageEditorView: View {
 }
 
 struct ImageGalleryView: View {
-    @State var selectedImageIndex: Int // The index of the tapped image
+    @State var selectedImage: PhotosData // The index of the tapped image
     @State var showEditor: Bool = false
     @State var sliderValue: Double = 100
     @State var verticalChange: Double = 50
@@ -31,31 +31,26 @@ struct ImageGalleryView: View {
         ZStack {
             bgColor.grainyEffect()
                 .ignoresSafeArea()
-            TabView(selection: $selectedImageIndex) {
-                ForEach(1..<13, id: \.self) { index in
-                    VStack {
-                        ImageEditorView(imageToEdit: String(index))
-                            .tag(index)
-                            .clipShape(.rect(cornerRadius: (100 - sliderValue)))
-                     //       .border(.white, width: 10)
-                            .scaleEffect(sliderValue * 0.01)
-                            .offset(y: 2 * (verticalChange - 50))
-                            .offset(x: 2 * (horizontalChange - 50))
-                            .onTapGesture {
-                                showEditor.toggle()
-                            }
-                        if quoteText != "" {
-                            Text(quoteText)
-                                .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(.yellow)
-                                .scaledToFit()
-                                .frame(width: UIScreen.main.bounds.width - 20, height: 40)
-                                .offset(y:  (sliderValue - 100))
-                        }
-                        // Need to add some text here.
+            VStack {
+                ImageEditorView(imageToEdit:selectedImage.image)
+                    .tag(selectedImage.imageID)
+                    .clipShape(.rect(cornerRadius: (100 - sliderValue)))
+                //       .border(.white, width: 10)
+                    .scaleEffect(sliderValue * 0.01)
+                    .offset(y: 2 * (verticalChange - 50))
+                    .offset(x: 2 * (horizontalChange - 50))
+                    .onTapGesture {
+                        showEditor.toggle()
                     }
+                if quoteText != "" {
+                    Text(quoteText)
+                        .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(.yellow)
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width - 20, height: 40)
+                        .offset(y:  (sliderValue - 100))
                 }
+                // Need to add some text here.
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
             .sheet(isPresented: $showEditor, content: {
                 ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, quote: $quoteText, color: $bgColor)
                     .onChange(of: downloadView, perform: {  newValue in
@@ -89,5 +84,5 @@ struct ImageGalleryView: View {
     }
 }
 #Preview {
-    ImageEditorView(imageToEdit: "1")
+    ImageEditorView(imageToEdit: UIImage(named: "1")!)
 }

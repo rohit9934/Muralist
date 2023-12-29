@@ -15,6 +15,7 @@
 		8C680C422B3C794A005DB559 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C680C412B3C794A005DB559 /* View+Extension.swift */; };
 		8C680C452B3EE4DD005DB559 /* Gaegu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C680C442B3EE4DD005DB559 /* Gaegu-Regular.ttf */; };
 		8C680C472B3EE6F0005DB559 /* GrandHotel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C680C462B3EE6F0005DB559 /* GrandHotel-Regular.otf */; };
+		8C680C492B3F1833005DB559 /* PhotosDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C680C482B3F1833005DB559 /* PhotosDataModel.swift */; };
 		8C7A12B12B2D8BFC00F35EE2 /* MuralistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A12B02B2D8BFC00F35EE2 /* MuralistApp.swift */; };
 		8C7A12B32B2D8BFC00F35EE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A12B22B2D8BFC00F35EE2 /* ContentView.swift */; };
 		8C7A12B52B2D8BFC00F35EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7A12B42B2D8BFC00F35EE2 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		8C680C432B3EE4BD005DB559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8C680C442B3EE4DD005DB559 /* Gaegu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Regular.ttf"; sourceTree = "<group>"; };
 		8C680C462B3EE6F0005DB559 /* GrandHotel-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GrandHotel-Regular.otf"; sourceTree = "<group>"; };
+		8C680C482B3F1833005DB559 /* PhotosDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataModel.swift; sourceTree = "<group>"; };
 		8C7A12AD2B2D8BFC00F35EE2 /* Muralist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muralist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7A12B02B2D8BFC00F35EE2 /* MuralistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuralistApp.swift; sourceTree = "<group>"; };
 		8C7A12B22B2D8BFC00F35EE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				8C2AD0822B2DB62B00BB4850 /* ImageEditIconsView.swift */,
 				8C680C3F2B3C3435005DB559 /* GrainyEffectView.swift */,
 				8C680C412B3C794A005DB559 /* View+Extension.swift */,
+				8C680C482B3F1833005DB559 /* PhotosDataModel.swift */,
 			);
 			path = Muralist;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8C2AD07F2B2DB17F00BB4850 /* CanvasView.swift in Sources */,
 				8C7A12B32B2D8BFC00F35EE2 /* ContentView.swift in Sources */,
 				8C7A12B12B2D8BFC00F35EE2 /* MuralistApp.swift in Sources */,
+				8C680C492B3F1833005DB559 /* PhotosDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
