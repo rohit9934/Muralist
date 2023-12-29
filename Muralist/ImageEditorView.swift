@@ -22,8 +22,8 @@ struct ImageGalleryView: View {
     @State var selectedImageIndex: Int // The index of the tapped image
     @State var showEditor: Bool = false
     @State var sliderValue: Double = 100
-    @State var verticalChange: Double = 0
-    @State var horizontalChange: Double = 0
+    @State var verticalChange: Double = 50
+    @State var horizontalChange: Double = 50
     @State var downloadView: Bool = false
     @State var bgColor: Color = .black
     var body: some View {
@@ -36,8 +36,8 @@ struct ImageGalleryView: View {
                         .tag(index)
                         .clipShape(.rect(cornerRadius: (100 - sliderValue)))
                         .scaleEffect(sliderValue * 0.01)
-                        .offset(y: verticalChange)
-                        .offset(x: horizontalChange)
+                        .offset(y: 2 * (verticalChange - 50))
+                        .offset(x: 2 * (horizontalChange - 50))
                         .onTapGesture {
                             showEditor.toggle()
                         }
