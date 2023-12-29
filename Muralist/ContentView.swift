@@ -15,7 +15,7 @@ struct ContentView: View {
                 Color.black.ignoresSafeArea()
                 ScrollView {
                     LazyVGrid(columns: gridItems,spacing: 10) {
-                        ForEach(1..<12,id: \.self) { num in
+                        ForEach(1..<13,id: \.self) { num in
                             NavigationLink(destination: ImageGalleryView(selectedImageIndex: num)) {
                                 PhotoView(imageID: String(num))
                             }

@@ -32,7 +32,7 @@ struct ImageGalleryView: View {
             bgColor.overlay(GrainyEffectView(opacity: 0.6, size: 1))
                 .ignoresSafeArea()
             TabView(selection: $selectedImageIndex) {
-                ForEach(1..<12, id: \.self) { index in
+                ForEach(1..<13, id: \.self) { index in
                     VStack {
                         ImageEditorView(imageToEdit: String(index))
                             .tag(index)
@@ -45,9 +45,10 @@ struct ImageGalleryView: View {
                             }
                         if quoteText != "" {
                             Text(quoteText)
-                                .foregroundStyle(.yellow)
+                                .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(.yellow)
                                 .scaledToFit()
-                                .frame(width: 400, height: 40)
+                                .frame(width: UIScreen.main.bounds.width - 20, height: 40)
+                                .offset(y:  (sliderValue - 100))
                         }
                         // Need to add some text here.
                     }

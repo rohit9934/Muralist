@@ -20,6 +20,6 @@ struct PhotoView: View {
 }
 
 #Preview {
-    PhotoView(imageID: "1")
+    PhotoView(imageID: "12")
         .previewLayout(.fixed(width: 175, height: 175))
 }
