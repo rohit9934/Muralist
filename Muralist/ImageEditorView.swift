@@ -45,9 +45,10 @@ struct ImageGalleryView: View {
                 if quoteText != "" {
                     Text(quoteText)
                         .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(.yellow)
-                        .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width - 20, height: 40)
-                        .offset(y:  (sliderValue - 100))
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.center)
+                        .frame(width: UIScreen.main.bounds.width - 20)
+                        .offset(y:  2 * (sliderValue - 100))
                 }
                 // Need to add some text here.
             }
@@ -84,5 +85,6 @@ struct ImageGalleryView: View {
     }
 }
 #Preview {
-    ImageEditorView(imageToEdit: UIImage(named: "1")!)
+  //  ImageEditorView(imageToEdit: UIImage(named: "1")!)
+    ImageGalleryView(selectedImage: PhotosData(image: UIImage(named: "1")!, imageID: 1))
 }
