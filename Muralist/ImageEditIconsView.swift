@@ -14,6 +14,9 @@ struct ImageEditIconsView: View {
     @Binding var downloadImage: Bool
     @State private var showSlider: Bool = false
     @State private var scale: CGFloat = 1.0
+    
+    @Binding var color: Color
+    @State private var showColorPicker: Bool = false
     var body: some View {
         Color.green.ignoresSafeArea()
         VStack {
@@ -47,13 +50,28 @@ struct ImageEditIconsView: View {
             Button(action: {
                 downloadImage = true
             }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                Text("Save Wallpaper")
             })
+            HStack {
+                Circle()
+                    .fill(color)
+                    .frame(width: 20, height: 20)
+                Button(action: {
+                    showColorPicker.toggle()
+                }, label: {
+                    Text("Change Color")
+                })
+            }
+            if showColorPicker {
+                ColorPicker("Choose your color", selection: $color)
+                                   .padding()
+            }
+            
         }
     }
 }
 
 #Preview {
-    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false))
+    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false), color: .constant(.black))
         .previewLayout(.fixed(width: 60, height: 100))
 }

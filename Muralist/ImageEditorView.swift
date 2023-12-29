@@ -25,15 +25,17 @@ struct ImageGalleryView: View {
     @State var verticalChange: Double = 0
     @State var horizontalChange: Double = 0
     @State var downloadView: Bool = false
+    @State var bgColor: Color = .black
     var body: some View {
         ZStack {
-            Color.red.overlay(GrainyEffectView(opacity: 0.6, size: 1))
+            bgColor.overlay(GrainyEffectView(opacity: 0.6, size: 1))
                 .ignoresSafeArea()
             TabView(selection: $selectedImageIndex) {
                 ForEach(1..<12, id: \.self) { index in
                     ImageEditorView(imageToEdit: String(index))
                         .tag(index)
-                        .scaleEffect(sliderValue * 0.01)// Tag each page with its index
+                        .clipShape(.rect(cornerRadius: (100 - sliderValue)))
+                        .scaleEffect(sliderValue * 0.01)
                         .offset(y: verticalChange)
                         .offset(x: horizontalChange)
                         .onTapGesture {
@@ -43,7 +45,7 @@ struct ImageGalleryView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .sheet(isPresented: $showEditor, content: {
-                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView)
+                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, color: $bgColor)
                     .onChange(of: downloadView, perform: {  newValue in
                         if newValue {
                             PHPhotoLibrary.requestAuthorization { status in
@@ -57,7 +59,7 @@ struct ImageGalleryView: View {
                             downloadView = false
                         }
                     })
-                    .presentationDetents([.height(120)])
+                    .presentationDetents([.height(150)])
             })
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enables paging behavior
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -74,19 +76,6 @@ struct ImageGalleryView: View {
         .navigationBarHidden(true) // Optionally hide the navigation bar if present
     }
 }
-struct ColorView: View {
-    let color: Color
-    
-    var body: some View {
-        Rectangle()
-            .foregroundColor(color)
-            // Use `.ignoresSafeArea()` if you want the color to extend to the edges of the display.
-    }
-}
-
-// An example array of colors to be displayed in each page of the TabView
-let colors: [Color] = [.red, .green, .blue, .orange, .pink]
-
 #Preview {
     ImageEditorView(imageToEdit: "1")
 }
