@@ -26,26 +26,36 @@ struct ImageGalleryView: View {
     @State var horizontalChange: Double = 50
     @State var downloadView: Bool = false
     @State var bgColor: Color = .black
+    @State var quoteText: String = "Enter some Text Here"
     var body: some View {
         ZStack {
             bgColor.overlay(GrainyEffectView(opacity: 0.6, size: 1))
                 .ignoresSafeArea()
             TabView(selection: $selectedImageIndex) {
                 ForEach(1..<12, id: \.self) { index in
-                    ImageEditorView(imageToEdit: String(index))
-                        .tag(index)
-                        .clipShape(.rect(cornerRadius: (100 - sliderValue)))
-                        .scaleEffect(sliderValue * 0.01)
-                        .offset(y: 2 * (verticalChange - 50))
-                        .offset(x: 2 * (horizontalChange - 50))
-                        .onTapGesture {
-                            showEditor.toggle()
+                    VStack {
+                        ImageEditorView(imageToEdit: String(index))
+                            .tag(index)
+                            .clipShape(.rect(cornerRadius: (100 - sliderValue)))
+                            .scaleEffect(sliderValue * 0.01)
+                            .offset(y: 2 * (verticalChange - 50))
+                            .offset(x: 2 * (horizontalChange - 50))
+                            .onTapGesture {
+                                showEditor.toggle()
+                            }
+                        if quoteText != "" {
+                            Text(quoteText)
+                                .foregroundStyle(.yellow)
+                                .scaledToFit()
+                                .frame(width: 400, height: 40)
                         }
+                        // Need to add some text here.
+                    }
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .sheet(isPresented: $showEditor, content: {
-                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, color: $bgColor)
+                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, quote: $quoteText, color: $bgColor)
                     .onChange(of: downloadView, perform: {  newValue in
                         if newValue {
                             PHPhotoLibrary.requestAuthorization { status in

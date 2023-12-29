@@ -14,6 +14,7 @@ struct ImageEditIconsView: View {
     @Binding var downloadImage: Bool
     @State private var showSlider: Bool = false
     @State private var scale: CGFloat = 1.0
+    @Binding var quote: String
     
     @Binding var color: Color
     @State private var showColorPicker: Bool = false
@@ -62,6 +63,11 @@ struct ImageEditIconsView: View {
                     Text("Change Color")
                 })
             }
+            HStack {
+                TextField("Enter some text", text: $quote)
+                            .border(Color.gray)
+                            .padding(.leading)
+            }
             if showColorPicker {
                 ColorPicker("Choose your color", selection: $color)
                                    .padding()
@@ -72,6 +78,6 @@ struct ImageEditIconsView: View {
 }
 
 #Preview {
-    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false), color: .constant(.black))
+    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false), quote: .constant("till i love"), color: .constant(.black))
         .previewLayout(.fixed(width: 60, height: 100))
 }
