@@ -29,7 +29,7 @@ struct ImageGalleryView: View {
     @State var quoteText: String = "Enter some Text Here"
     var body: some View {
         ZStack {
-            bgColor.overlay(GrainyEffectView(opacity: 0.6, size: 1))
+            bgColor.grainyEffect()
                 .ignoresSafeArea()
             TabView(selection: $selectedImageIndex) {
                 ForEach(1..<13, id: \.self) { index in
@@ -37,6 +37,7 @@ struct ImageGalleryView: View {
                         ImageEditorView(imageToEdit: String(index))
                             .tag(index)
                             .clipShape(.rect(cornerRadius: (100 - sliderValue)))
+                     //       .border(.white, width: 10)
                             .scaleEffect(sliderValue * 0.01)
                             .offset(y: 2 * (verticalChange - 50))
                             .offset(x: 2 * (horizontalChange - 50))

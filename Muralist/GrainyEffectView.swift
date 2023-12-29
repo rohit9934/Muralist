@@ -7,23 +7,19 @@
 
 import SwiftUI
 
-struct GrainyEffectView: View {
-    let opacity: Double
-    let size: CGFloat
-    var body: some View {
-        // Create a random noise pattern
-        Canvas { context, size in
-            for _ in 0...(Int(size.width * size.height) / 100) {
-                // Draw the random grain particles
-                let position = CGPoint(x: .random(in: 0...size.width), y: .random(in: 0...size.height))
-                let rect = CGRect(origin: position, size: CGSize(width: self.size, height: self.size))
-                context.fill(Path(ellipseIn: rect), with: .color(.green))
-            }
-        }
-        .opacity(opacity) // Set the opacity to simulate grainy effect
+struct GrainyViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                Canvas { context, size in
+                    for _ in 0..<1000 { // Increase the number for more density
+                        let x = Double.random(in: 0..<size.width)
+                        let y = Double.random(in: 0..<size.height)
+                        let rect = CGRect(x: x, y: y, width: 1, height: 1)
+                        context.fill(Path(rect), with: .color(.white.opacity(0.5)))
+                    }
+                }
+                .blendMode(.overlay) // Blends the noise with your content
+            )
     }
-}
-
-#Preview {
-    GrainyEffectView(opacity: 0.9, size: 1)
 }

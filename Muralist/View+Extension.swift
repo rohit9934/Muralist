@@ -29,4 +29,7 @@ extension View {
         
         return image
     }
+    func grainyEffect() -> some View {
+        self.modifier(GrainyViewModifier())
+    }
 }
