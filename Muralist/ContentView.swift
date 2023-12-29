@@ -10,6 +10,16 @@ import PhotosUI
 struct ContentView: View {
     let gridItems = [GridItem(.flexible()),  GridItem(.flexible())]
     @StateObject var photosData = PhotosDataModel()
+    init() {
+         let appearance = UINavigationBarAppearance()
+         appearance.backgroundColor = UIColor.black // Your desired background color
+         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // Your desired title color
+         
+         UINavigationBar.appearance().standardAppearance = appearance
+         UINavigationBar.appearance().compactAppearance = appearance
+         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+     }
+     
     var body: some View {
         NavigationStack {
             ZStack {
@@ -24,11 +34,13 @@ struct ContentView: View {
                     }.padding()
                 }
             }.navigationTitle("Muralist")
+                .tint(.red)
                 .toolbar(content: {
                     PhotosPicker(selection: $photosData.photosPickerItem, matching: .images) {
                         Image(systemName: "plus")
                     }
                 })
+
         }
     }
 }
