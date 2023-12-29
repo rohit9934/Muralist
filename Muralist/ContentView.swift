@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-
+import PhotosUI
 struct ContentView: View {
     let gridItems = [GridItem(.flexible()),  GridItem(.flexible())]
+    @State private var addedImage: PhotosPickerItem? = nil
     var body: some View {
         NavigationStack {
             ZStack {
@@ -22,7 +23,12 @@ struct ContentView: View {
                         }
                     }.padding()
                 }
-            }
+            }.navigationTitle("Muralist")
+                .toolbar(content: {
+                    PhotosPicker(selection: $addedImage, matching: .images) {
+                        Image(systemName: "plus")
+                    }
+                })
         }
     }
 }

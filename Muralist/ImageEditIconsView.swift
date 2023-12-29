@@ -15,7 +15,6 @@ struct ImageEditIconsView: View {
     @State private var showSlider: Bool = false
     @State private var scale: CGFloat = 1.0
     @Binding var quote: String
-    
     @Binding var color: Color
     @State private var showColorPicker: Bool = false
     var body: some View {
