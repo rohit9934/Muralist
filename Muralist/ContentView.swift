@@ -12,9 +12,8 @@ struct ContentView: View {
     @StateObject var photosData = PhotosDataModel()
     init() {
          let appearance = UINavigationBarAppearance()
-         appearance.backgroundColor = UIColor.black // Your desired background color
-         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // Your desired title color
-         
+         appearance.backgroundColor = UIColor.black 
+         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
          UINavigationBar.appearance().standardAppearance = appearance
          UINavigationBar.appearance().compactAppearance = appearance
          UINavigationBar.appearance().scrollEdgeAppearance = appearance
