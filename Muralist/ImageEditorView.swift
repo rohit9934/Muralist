@@ -27,6 +27,7 @@ struct ImageGalleryView: View {
     @State var downloadView: Bool = false
     @State var bgColor: Color = .black
     @State var quoteText: String = "Enter some Text Here"
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             bgColor.grainyEffect()
@@ -74,14 +75,21 @@ struct ImageGalleryView: View {
         }                .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    // Perform your action here
+                     
                 }) {
-                    Image(systemName: "plus") // Customize with your button's image or text
+                    Image(systemName: "plus")
                 }
                 
             }
         }.ignoresSafeArea()
-        .navigationBarHidden(true) // Optionally hide the navigation bar if present
+        .navigationBarHidden(true)
+        .gesture(DragGesture().onChanged { value in
+            // Check for a horizontal swipe to the right, and the swipe is from the edge.
+            if value.startLocation.x < 20 && value.translation.width > 100 {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        })
+    // Optionally hide the navigation bar if present
     }
 }
 #Preview {
