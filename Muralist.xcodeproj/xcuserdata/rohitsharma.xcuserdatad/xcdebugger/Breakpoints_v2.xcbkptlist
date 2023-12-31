@@ -7,84 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muralist/PhotosDataModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "addPhoto(photoPicker:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - 6d1adf0ea02c50b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - 4e1fd7ce56b8f2b3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "416">
-               </Location>
-               <Location
-                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - d6405c8a5fb01f4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "FFCEF1DA-F4B5-4D30-BDE5-EF879125AD7E - d6405c8a5fb01f4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in Muralist.PhotosDataModel.addPhoto(photoPicker: Swift.Optional&lt;_PhotosUI_SwiftUI.PhotosPickerItem&gt;) -&gt; ()"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotosDataModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1621C164-4EB7-4996-ADED-F83AA2CE6C3B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -92,10 +14,58 @@
             filePath = "Muralist/ImageEditorView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DA74F64-FA70-4869-8823-A295A2843890"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muralist/PhotoDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loadPhoto()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0DA74F64-FA70-4869-8823-A295A2843890 - b17cb9c0f2847cb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muralist.FilePhotoDataManager.loadPhoto() -&gt; Swift.Array&lt;Muralist.PhotosData&gt;"
+                  moduleName = "Muralist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotoDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1084">
+               </Location>
+               <Location
+                  uuid = "0DA74F64-FA70-4869-8823-A295A2843890 - b17cb9c0f2847cb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muralist.FilePhotoDataManager.loadPhoto() -&gt; Swift.Array&lt;Muralist.PhotosData&gt;"
+                  moduleName = "Muralist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotoDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

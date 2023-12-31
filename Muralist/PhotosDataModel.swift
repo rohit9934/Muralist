@@ -11,21 +11,26 @@ import _PhotosUI_SwiftUI
 
 class PhotosDataModel: ObservableObject {
     @Published var photos: [PhotosData] = []
+    let photoService: PhotoDataService
     @Published var photosPickerItem: PhotosPickerItem? = nil {
         didSet {
             addPhoto(photoPicker: photosPickerItem)
         }
     }
-    init() {
+    init(photoService: PhotoDataService) {
+        self.photoService = photoService
         predefinedData()
     }
     private func addPhoto(photoPicker: PhotosPickerItem?) {
         guard let photoPicker else {return }
+        
         Task {
             if let data = try? await photoPicker.loadTransferable(type: Data.self) {
                 if let newImage = UIImage(data: data) {
+                    let photosData = PhotosData(image: newImage, imageID: (photos.last?.imageID ?? 1) + 1)
+                    photoService.savePhoto(photo: photosData)
                     await MainActor.run {
-                        self.photos.append(PhotosData(image: newImage, imageID: (photos.last?.imageID ?? 1) + 1))
+                        self.photos.append(photosData)
                     }
                 }
             }
@@ -36,7 +41,9 @@ class PhotosDataModel: ObservableObject {
         for index in 1..<13 {
             photos.append(PhotosData(image: UIImage(named: String(index))!, imageID: index))
         }
+        photos = photos + photoService.loadPhoto()
     }
+
 }
 
 

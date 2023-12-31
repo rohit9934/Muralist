@@ -26,6 +26,7 @@ struct ImageGalleryView: View {
     @State var horizontalChange: Double = 50
     @State var downloadView: Bool = false
     @State var bgColor: Color = .black
+    @State var textColor: Color = .yellow
     @State var quoteText: String = "Enter some Text Here"
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
@@ -45,7 +46,7 @@ struct ImageGalleryView: View {
                     }
                 if quoteText != "" {
                     Text(quoteText)
-                        .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(.yellow)
+                        .font(.custom("GrandHotel-Regular", size: 30))                          .foregroundStyle(textColor)
                         .lineLimit(nil)
                         .multilineTextAlignment(.center)
                         .frame(width: UIScreen.main.bounds.width - 20)
@@ -54,7 +55,7 @@ struct ImageGalleryView: View {
                 // Need to add some text here.
             }
             .sheet(isPresented: $showEditor, content: {
-                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, quote: $quoteText, color: $bgColor)
+                ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, quote: $quoteText, bgColor: $bgColor, textColor: $textColor)
                     .onChange(of: downloadView, perform: {  newValue in
                         if newValue {
                             PHPhotoLibrary.requestAuthorization { status in

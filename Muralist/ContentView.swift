@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 struct ContentView: View {
     let gridItems = [GridItem(.flexible()),  GridItem(.flexible())]
-    @StateObject var photosData = PhotosDataModel()
+    @StateObject var photosData = PhotosDataModel(photoService: FilePhotoDataManager())
     init() {
          let appearance = UINavigationBarAppearance()
          appearance.backgroundColor = UIColor.black 

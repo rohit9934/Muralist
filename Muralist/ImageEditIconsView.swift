@@ -15,8 +15,10 @@ struct ImageEditIconsView: View {
     @State private var showSlider: Bool = false
     @State private var scale: CGFloat = 1.0
     @Binding var quote: String
-    @Binding var color: Color
+    @Binding var bgColor: Color
+    @Binding var textColor: Color
     @State private var showColorPicker: Bool = false
+    @State private var showTextColorPicker: Bool = false
     var body: some View {
         Color.green.ignoresSafeArea()
         VStack {
@@ -54,13 +56,17 @@ struct ImageEditIconsView: View {
             })
             HStack {
                 Circle()
-                    .fill(color)
+                    .fill(bgColor)
                     .frame(width: 20, height: 20)
-                Button(action: {
-                    showColorPicker.toggle()
-                }, label: {
-                    Text("Change Color")
-                })
+                    .onTapGesture {
+                        showColorPicker.toggle()
+                    }
+                Circle()
+                    .fill(textColor)
+                    .frame(width: 20, height: 20)
+                    .onTapGesture {
+                        showTextColorPicker.toggle()
+                    }
             }
             HStack {
                 TextField("Enter some text", text: $quote)
@@ -68,15 +74,18 @@ struct ImageEditIconsView: View {
                             .padding(.leading)
             }
             if showColorPicker {
-                ColorPicker("Choose your color", selection: $color)
+                ColorPicker("Choose your color", selection: $bgColor)
                                    .padding()
             }
-            
+            if showTextColorPicker {
+                ColorPicker("Choose your color", selection: $textColor)
+                                   .padding()
+            }
         }
     }
 }
 
 #Preview {
-    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false), quote: .constant("till i love"), color: .constant(.black))
+    ImageEditIconsView(sliderValue: .constant(40), verticalChange: .constant(10), horizontalChange: .constant(50), downloadImage: .constant(false), quote: .constant("till i love"), bgColor: .constant(.black), textColor: .constant(.blue))
         .previewLayout(.fixed(width: 60, height: 100))
 }
