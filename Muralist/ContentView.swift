@@ -28,7 +28,7 @@ struct ContentView: View {
                         ForEach(photosData.photos,id: \.self) { num in
                             NavigationLink(destination: ImageGalleryView(selectedImage: num)) {
                                 PhotoView(showImage: num, onDeleteTapped: {
-                                    withAnimation {
+                                    withAnimation(.spring(response: 0.5,dampingFraction: 0.5,blendDuration: 0.5)) {
                                         photosData.deletePhoto(photo: num)
                                     }
                                 })

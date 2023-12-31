@@ -56,6 +56,7 @@ struct ImageGalleryView: View {
             }
             .sheet(isPresented: $showEditor, content: {
                 ImageEditIconsView(sliderValue: $sliderValue, verticalChange: $verticalChange, horizontalChange: $horizontalChange, downloadImage: $downloadView, quote: $quoteText, bgColor: $bgColor, textColor: $textColor)
+                    .opacity(0.8)
                     .onChange(of: downloadView, perform: {  newValue in
                         if newValue {
                             PHPhotoLibrary.requestAuthorization { status in
@@ -69,14 +70,14 @@ struct ImageGalleryView: View {
                             downloadView = false
                         }
                     })
-                    .presentationDetents([.height(150)])
+                    .presentationDetents([.height(180)])
+                    .presentationCornerRadius(20)
             })
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enables paging behavior
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }                .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                     
                 }) {
                     Image(systemName: "plus")
                 }
