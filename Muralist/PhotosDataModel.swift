@@ -23,7 +23,6 @@ class PhotosDataModel: ObservableObject {
     }
     private func addPhoto(photoPicker: PhotosPickerItem?) {
         guard let photoPicker else {return }
-        
         Task {
             if let data = try? await photoPicker.loadTransferable(type: Data.self) {
                 if let newImage = UIImage(data: data) {
@@ -43,7 +42,12 @@ class PhotosDataModel: ObservableObject {
         }
         photos = photos + photoService.loadPhoto()
     }
-
+    
+    func deletePhoto(photo: PhotosData) {
+        if let index = photos.firstIndex(where: { $0.imageID == photo.imageID }) {
+            photos.remove(at: index)
+        }
+    }
 }
 
 

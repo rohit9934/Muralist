@@ -27,7 +27,11 @@ struct ContentView: View {
                     LazyVGrid(columns: gridItems,spacing: 10) {
                         ForEach(photosData.photos,id: \.self) { num in
                             NavigationLink(destination: ImageGalleryView(selectedImage: num)) {
-                                PhotoView(showImage: num.image)
+                                PhotoView(showImage: num, onDeleteTapped: {
+                                    withAnimation {
+                                        photosData.deletePhoto(photo: num)
+                                    }
+                                })
                             }
                         }
                     }.padding()

@@ -8,12 +8,17 @@
 import Foundation
 import UIKit
 
+// This Data Service should have all CRUD operations, possibly CRD.
 protocol PhotoDataService {
     func savePhoto(photo: PhotosData)
     func loadPhoto() -> [PhotosData]
+    func deletePhoto(photo: PhotosData)
 }
 
 class FilePhotoDataManager: PhotoDataService {
+    func deletePhoto(photo: PhotosData) {
+    }
+    
     func savePhoto(photo: PhotosData) {
         let image = photo.image
         if let data = image.jpegData(compressionQuality: 1) ?? image.pngData() {

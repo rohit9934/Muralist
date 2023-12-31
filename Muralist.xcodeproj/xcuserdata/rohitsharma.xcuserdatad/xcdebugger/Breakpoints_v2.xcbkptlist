@@ -20,53 +20,5 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0DA74F64-FA70-4869-8823-A295A2843890"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muralist/PhotoDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "loadPhoto()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0DA74F64-FA70-4869-8823-A295A2843890 - b17cb9c0f2847cb3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muralist.FilePhotoDataManager.loadPhoto() -&gt; Swift.Array&lt;Muralist.PhotosData&gt;"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotoDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1084">
-               </Location>
-               <Location
-                  uuid = "0DA74F64-FA70-4869-8823-A295A2843890 - b17cb9c0f2847cb3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muralist.FilePhotoDataManager.loadPhoto() -&gt; Swift.Array&lt;Muralist.PhotosData&gt;"
-                  moduleName = "Muralist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitsharma/Documents/GitHub/Muralist/Muralist/PhotoDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1220">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
